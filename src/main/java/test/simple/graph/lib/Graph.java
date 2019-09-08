@@ -7,6 +7,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+/**
+ * The class provides a storage of graph as an adjacency list
+ * @param <T> - vertex type
+ */
 public class Graph<T> {
 
     private boolean direction = false;
@@ -16,6 +20,9 @@ public class Graph<T> {
     public Graph() {
     }
 
+    /**
+     * @param direction - if true - graph is direction otherwise - non-direction
+     */
     public Graph(boolean direction) {
         this.direction = direction;
     }
@@ -33,6 +40,12 @@ public class Graph<T> {
         }
     }
 
+    /**
+     * Get path between two vertex (not optimal)
+     * @param start
+     * @param dest
+     * @return
+     */
     public List<T> getPath(T start, T dest) {
         List<T> path = new ArrayList<>();
         dfs(start, dest, path, new HashMap<>());
